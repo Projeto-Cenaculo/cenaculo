@@ -73,6 +73,19 @@ footer {
 	float: right;
 }
 
+@media screen and (max-width: 800px) {
+    iframe {
+		width: 490px;
+        height: 245px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    iframe {
+		width: 390px;
+        height: 245px;
+    }
+}
 #bor {
 	border: 4px solid;
 }
