@@ -69,6 +69,10 @@ footer {
 	padding: 10px;
 }
 
+.col-md-12 {
+	margin-bottom: 10px;	
+}
+
 #right {
 	float: right;
 }
