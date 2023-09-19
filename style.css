@@ -12,7 +12,9 @@ section{
 
 }
 
- 
+ p {
+	text-aling: justify;	 
+ }
 
 header {
 	text-align: center;
