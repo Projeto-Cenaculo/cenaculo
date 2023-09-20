@@ -10,7 +10,7 @@
 </head>
    <header>
    <nav class="navbar navbar-expand-lg">
-		<a href="index.html"><img src="img/logo.png" alt="logo" width="75" height="65" class="d-inline-block align-text-top"></a><a class="navbar-brand" href="index.html"><strong><span class="nav-link">&nbsp;Projeto Cenáculo</span></strong></a>
+		<img src="img/logo.png" alt="logo" width="75" height="65" class="d-inline-block align-text-top"><a class="navbar-brand" href="index.html"><strong><span class="nav-link">&nbsp;Projeto Cenáculo</span></strong></a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
@@ -34,129 +34,142 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
+				<p>Você já notou a presença de pratos e talheres espalhados pela escola?</p>
                 <div id="chartContainer1" style="height: 300px;"></div>
             </div>
         </div><br>
         <div class="row">
             <div class="col-md-12">
+			<p>Desde a mudança local da merenda, como você avalia a quantidade de pratos e talheres espalhados desde então?</p>
                 <div id="chartContainer2" style="height: 300px;"></div>
             </div>
         </div><br>
         <div class="row">
             <div class="col-md-12">
+			<p>No almoço, você já lidou com a falta de mesas disponíveis para refeição?</p>
                 <div id="chartContainer3" style="height: 300px;"></div>
             </div>
         </div><br>
         <div class="row">
             <div class="col-md-12">
+			<p>Você acha que essa mudança contribuirá para um refeitório mais limpo?</p>
                 <div id="chartContainer4" style="height: 300px;"></div>
             </div>
         </div><br>
         <div class="row">
             <div class="col-md-12">
+			<p>Agora sobre o lixo descartado incorretamente na escola, como Você avalia a situação?</p>
                 <div id="chartContainer5" style="height: 300px;"></div>
             </div>
         </div>
     </div><br>
+	
+	
+	
 
     <!-- Adicione o link para o CanvasJS -->
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     <script>
         window.onload = function () {
-            var chart1 = new CanvasJS.Chart("chartContainer1", {
-                animationEnabled: true,
-                title: {
-                    text: "Você já notou a presença de pratos e talheres espalhados pela escola?"
-                },
-                data: [{
-                    type: "pie",
-                    startAngle: 240,
-                    yValueFormatString: "##0.0\"%\"",
-                    indexLabel: "{label} {y}",
-                    dataPoints: [
-                        { y: 42.9, label: "Frequente" },
-                        { y: 14.3, label: "Sim, geralmente tem" },
-                        { y: 42.9, label: "Algumas vezes" },
-                        { y: 0, label: "Nunca reparei" }
-                    ]
-                }]
-            });
-            chart1.render();
+  var chart1 = new CanvasJS.Chart("chartContainer1", {
+    animationEnabled: true,
+    data: [{
+      type: "pie",
+      startAngle: 240,
+      yValueFormatString: "##0.0\"%\"",
+      indexLabel: "{label} {y}",
+      dataPoints: [
+        { y: 42.9, label: "Frequente" },
+        { y: 14.3, label: "Sim, geralmente tem" },
+        { y: 42.9, label: "Algumas vezes" },
+        { y: 0, label: "Nunca reparei" }
+      ]
+    }],
+    toolTip: {
+      enabled: false // Remova os efeitos hover desativando as dicas de ferramenta
+    }
+  });
+  chart1.render();
+  var chart2 = new CanvasJS.Chart("chartContainer2", {
+    animationEnabled: true,
+    data: [{
+      type: "pie",
+      startAngle: 240,
+      yValueFormatString: "##0.0\"%\"",
+      indexLabel: "{label} {y}",
+      dataPoints: [
+        { y: 90.5, label: "Aumentou" },
 
-            var chart2 = new CanvasJS.Chart("chartContainer2", {
-                animationEnabled: true,
-                title: {
-                    text: "Desde a mudança local da merenda, como você avalia a quantidade de pratos e talheres espalhados desde então?"
-                },
-                data: [{
-                    type: "pie",
-                    startAngle: 240,
-                    yValueFormatString: "##0.0\"%\"",
-                    indexLabel: "{label} {y}",
-                    dataPoints: [
-                        { y: 90.5, label: "Aumentou" },
-                        { y: 4.7, label: "Diminuiu" },
-                        { y: 4.8, label: "Não houve diferença" },
-                    ]
-                }]
-            });
-            chart2.render();
+        { y: 4.7, label: "Diminuiu" },
 
-            var chart3 = new CanvasJS.Chart("chartContainer3", {
-                animationEnabled: true,
-                title: {
-                    text: "Você acha que essa mudança contribuirá para um refeitório mais limpo?"
-                },
-                data: [{
-                    type: "pie",
-                    startAngle: 240,
-                    yValueFormatString: "##0.0\"%\"",
-                    indexLabel: "{label} {y}",
-                    dataPoints: [
-                        { y: 95.2, label: "Sim" },
-                        { y: 4.8, label: "Não" },
-                    ]
-                }]
-            });
-            chart3.render();
+        { y: 4.8, label: "Não houve diferença" },
+      ]
+    }],
+    toolTip: {
+      enabled: false
+    }
+  });
+  chart2.render();
+  var chart3 = new CanvasJS.Chart("chartContainer3", {
+    animationEnabled: true,
+    data: [{
+      type: "pie",
+      startAngle: 240,
+      yValueFormatString: "##0.0\"%\"",
+      indexLabel: "{label} {y}",
+      dataPoints: [
+        { y: 95.2, label: "Sim" },
+        { y: 4.8, label: "Não" },
+      ]
+    }],
+    toolTip: {
 
-            var chart4 = new CanvasJS.Chart("chartContainer4", {
-                animationEnabled: true,
-                title: {
-                    text: "No almoço, você já lidou com a falta de mesas disponíveis para refeição?"
-                },
-                data: [{
-                    type: "pie",
-                    startAngle: 240,
-                    yValueFormatString: "##0.0\"%\"",
-                    indexLabel: "{label} {y}",
-                    dataPoints: [
-                        { y: 95.2, label: "Sim" },
-                        { y: 4.8, label: "Não" },
-                    ]
-                }]
-            });
-            chart4.render();
+      enabled: false
 
-            var chart5 = new CanvasJS.Chart("chartContainer5", {
-                animationEnabled: true,
-                title: {
-                    text: "Agora sobre o lixo descartado incorretamente na escola, como Você avalia a situação?"
-                },
-                data: [{
-                    type: "pie",
-                    startAngle: 240,
-                    yValueFormatString: "##0.0\"%\"",
-                    indexLabel: "{label} {y}",
-                    dataPoints: [
-                        { y: 71.4, label: "Moderado" },
-                        { y: 14.3, label: "Preocupante" },
-                        { y: 14.3, label: "Não acredito que há descarte incorreto" },
-                    ]
-                }]
-            });
-            chart5.render();
-        }
+    }
+  });
+  chart3.render();
+  var chart4 = new CanvasJS.Chart("chartContainer4", {
+    animationEnabled: true,
+
+    data: [{
+      type: "pie",
+      startAngle: 240,
+      yValueFormatString: "##0.0\"%\"",
+      indexLabel: "{label} {y}",
+      dataPoints: [
+        { y: 95.2, label: "Sim" },
+
+        { y: 4.8, label: "Não" },
+      ]
+    }],
+    toolTip: {
+      enabled: false
+    }
+  });
+  chart4.render();
+  var chart5 = new CanvasJS.Chart("chartContainer5", {
+    animationEnabled: true,
+    data: [{
+      type: "pie",
+      startAngle: 240,
+      yValueFormatString: "##0.0\"%\"",
+      indexLabel: "{label} {y}",
+      dataPoints: [
+        { y: 71.4, label: "Moderado" },
+
+        { y: 14.3, label: "Preocupante" },
+
+        { y: 14.3, label: "Não acredito que há descarte incorreto" },
+      ]
+    }],
+    toolTip: {
+      enabled: false
+    }
+  });
+
+  chart5.render();
+};
     </script>
              
 			 <footer>
